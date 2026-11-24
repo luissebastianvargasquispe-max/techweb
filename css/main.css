@@ -1,0 +1,267 @@
+.button {
+    display: inline-block;
+    background: var(--color-principal);
+    color: #fff;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+.button--accent {
+    background: var(--color-acento);
+}
+
+.hero {
+    width: 100%;
+    padding: 55px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.hero__tag,
+.section__tag {
+    color: var(--color-acento);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero__title {
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1;
+    margin: 18px 0;
+    letter-spacing: -2px;
+}
+
+.hero__text {
+    color: var(--color-gris);
+    max-width: 420px;
+    margin-bottom: 24px;
+}
+
+.hero__media {
+    height: 390px;
+    position: relative;
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.hero__badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--color-tarjeta);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.section {
+    width: 100%;
+    padding: 70px 7%;
+}
+
+.section--dark {
+    background: var(--color-principal);
+    color: #fff;
+}
+
+.section--dark .section__tag {
+    color: var(--color-acento-claro);
+}
+
+.section__heading {
+    margin-bottom: 30px;
+}
+
+.section__title {
+    font-size: clamp(26px, 4vw, 38px);
+    margin-top: 6px;
+    letter-spacing: -1px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: var(--color-tarjeta);
+    border-radius: var(--radio);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card--large {
+    grid-row: span 2;
+}
+
+.card--large .card__img {
+    height: 315px;
+}
+
+.card__content {
+    padding: 22px;
+}
+
+.card__tag {
+    color: var(--color-acento);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card__title {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.card__meta {
+    color: var(--color-gris);
+    font-size: 13px;
+}
+
+.league-grid,
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+}
+
+.league {
+    padding: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radio);
+    transition: 0.3s;
+}
+
+.league:hover {
+    background: var(--color-secundario);
+}
+
+.league__number {
+    color: var(--color-acento-claro);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.league__title {
+    margin-top: 12px;
+}
+
+.league__region {
+    color: #bdc8c5;
+    font-size: 13px;
+}
+
+.team {
+    padding: 32px 20px;
+    background: var(--color-tarjeta);
+    border-radius: var(--radio);
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.team:hover {
+    background: #dce7c8;
+    transform: translateY(-4px);
+}
+
+.team__country {
+    color: var(--color-gris);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.news {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    background: var(--color-tarjeta);
+    padding: 22px;
+    border-radius: var(--radio);
+}
+
+.news__img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.news__title {
+    font-size: 26px;
+    margin: 12px 0;
+}
+
+.news__text {
+    color: var(--color-gris);
+}
+
+.auth-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 430px;
+}
+
+.form__input {
+    padding: 14px;
+    border: 1px solid #d2cbbb;
+    background: var(--color-tarjeta);
+    border-radius: 8px;
+    outline: none;
+}
+
+.form__input:focus {
+    border-color: var(--color-acento);
+}
+
+.form__link {
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
