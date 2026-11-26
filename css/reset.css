@@ -1,0 +1,226 @@
+:root {
+    --color-fondo: #f1eadb;
+    --color-tarjeta: #fffaf0;
+    --color-principal: #142b3c;
+    --color-secundario: #284c50;
+    --color-acento: #668b45;
+    --color-acento-claro: #a8c76b;
+    --color-texto: #172d3c;
+    --color-gris: #77786e;
+    --radio: 18px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: system-ui, -apple-system, Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* TABLET (769px - 1024px) */
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 36px 6%;
+    }
+
+    .hero__media {
+        width: 100%;
+        height: 300px;
+        order: -1;
+    }
+
+    .auth-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .footer__top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+    }
+}
+
+/* CELULAR (HASTA 768px) */
+@media (max-width: 768px) {
+    .header__toggle {
+        display: flex;
+    }
+
+    .header__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--color-principal);
+        color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 22px;
+        padding: 32px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-12px);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        z-index: 1001;
+    }
+
+    .header__nav--open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .header__nav .header__link {
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .header__nav .header__link--cta {
+        background: var(--color-acento);
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        padding: 14px;
+    }
+
+    .section {
+        padding: 44px 5%;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 20px 5% 40px;
+        gap: 20px;
+    }
+
+    .hero__media {
+        width: 100%;
+        height: 215px;
+        order: -1;
+    }
+
+    .hero__title {
+        font-size: 36px;
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+    }
+
+    .hero__text {
+        max-width: 100%;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+        padding: 15px 18px;
+    }
+
+    /* Carrusel horizontal deslizable en celular */
+    .card-grid,
+    .league-grid,
+    .team-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+    }
+
+    .card-grid::-webkit-scrollbar,
+    .league-grid::-webkit-scrollbar,
+    .team-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card,
+    .card--large {
+        flex: 0 0 85%;
+        min-width: 0;
+        scroll-snap-align: start;
+    }
+
+    .card--large .card__img,
+    .card__img {
+        height: 185px;
+    }
+
+    .league,
+    .team {
+        flex: 0 0 70%;
+        min-width: 0;
+        scroll-snap-align: start;
+    }
+
+    .news,
+    .auth-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .news__img {
+        height: 200px;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .form__input {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .footer {
+        padding: 40px 5% 28px;
+    }
+
+    .footer__top {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .footer__brand {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .footer__text {
+        max-width: 100%;
+    }
+}
