@@ -1,0 +1,11 @@
+/* Importa el archivo que limpia los estilos predeterminados del navegador */
+@import url('reset.css');
+
+/* Importa los estilos de la barra de navegación o encabezado */
+@import url('header.css');
+
+/* Importa los estilos del contenido principal de la página */
+@import url('main.css');
+
+/* Importa los estilos del pie de página */
+@import url('footer.css');

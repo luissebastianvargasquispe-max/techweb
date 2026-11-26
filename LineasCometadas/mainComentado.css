@@ -1,0 +1,312 @@
+/* ESTILOS DE LOS BOTONES */
+
+.button {
+    display: inline-block; /* Permite que el botón se comporte como un elemento en línea */
+    background: var(--color-principal); /* Color de fondo del botón */
+    color: #fff; /* Texto de color blanco */
+    border: none; /* Quita el borde */
+    padding: 14px 22px; /* Agrega espacio dentro del botón */
+    border-radius: 8px; /* Redondea las esquinas */
+    font-size: 12px; /* Tamaño del texto */
+    font-weight: 700; /* Hace el texto más grueso */
+    cursor: pointer; /* Muestra la manito al pasar el mouse */
+    transition: 0.3s; /* Hace suaves los cambios */
+}
+
+/* Efecto cuando pasamos el mouse por el botón */
+.button:hover {
+    background: var(--color-acento); /* Cambia el color de fondo */
+    transform: translateY(-2px); /* Mueve el botón un poquito hacia arriba */
+}
+
+/* Botón con un color diferente */
+.button--accent {
+    background: var(--color-acento);
+}
+
+/* SECCIÓN PRINCIPAL O PORTADA */
+.hero {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 55px 7%; /* Agrega espacio interno */
+    display: grid; /* Organiza el contenido en una cuadrícula */
+    grid-template-columns: 1fr 1.2fr; /* Divide el espacio en dos columnas */
+    gap: 35px; /* Deja espacio entre las columnas */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* Estilo de las pequeñas etiquetas de las secciones */
+.hero__tag,
+.section__tag {
+    color: var(--color-acento); /* Usa el color de acento */
+    font-size: 12px; /* Tamaño pequeño de letra */
+    font-weight: 700; /* Letra en negrita */
+    letter-spacing: 2px; /* Separa las letras */
+}
+
+/* Título principal de la portada */
+.hero__title {
+    font-size: clamp(40px, 6vw, 72px); /* Ajusta el tamaño según la pantalla */
+    line-height: 1; /* Reduce el espacio entre líneas */
+    margin: 18px 0; /* Agrega espacio arriba y abajo */
+    letter-spacing: -2px; /* Junta un poco las letras */
+}
+
+/* Texto descriptivo de la portada */
+.hero__text {
+    color: var(--color-gris); /* Usa un color gris */
+    max-width: 420px; /* Limita el ancho del texto */
+    margin-bottom: 24px; /* Deja espacio debajo */
+}
+
+/* Contenedor de la imagen principal */
+.hero__media {
+    height: 390px; /* Define la altura de la imagen */
+    position: relative; /* Permite colocar elementos encima */
+}
+
+/* Imagen principal de la portada */
+.hero__img {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 24px; /* Redondea las esquinas */
+}
+
+/* Etiqueta que aparece encima de la imagen */
+.hero__badge {
+    position: absolute; /* Permite colocarla sobre la imagen */
+    bottom: 20px; /* La coloca a 20px desde abajo */
+    left: 20px; /* La coloca a 20px desde la izquierda */
+    background: var(--color-tarjeta); /* Color de fondo */
+    padding: 10px 16px; /* Agrega espacio interno */
+    border-radius: 8px; /* Redondea las esquinas */
+    font-size: 11px; /* Tamaño de letra */
+    font-weight: 700; /* Letra en negrita */
+}
+
+/* ESTILOS GENERALES DE LAS SECCIONES */
+.section {
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 70px 7%; /* Agrega espacio interno */
+}
+
+/* Sección con fondo oscuro */
+.section--dark {
+    background: var(--color-principal); /* Coloca el fondo principal */
+    color: #fff; /* Pone el texto en blanco */
+}
+
+/* Cambia el color de las etiquetas dentro de la sección oscura */
+.section--dark .section__tag {
+    color: var(--color-acento-claro);
+}
+
+/* Espacio debajo del encabezado de cada sección */
+.section__heading {
+    margin-bottom: 30px;
+}
+
+/* Título de las secciones */
+.section__title {
+    font-size: clamp(26px, 4vw, 38px); /* Ajusta el tamaño según la pantalla */
+    margin-top: 6px; /* Deja un pequeño espacio arriba */
+    letter-spacing: -1px; /* Junta un poco las letras */
+}
+
+/* CUADRÍCULA DE TARJETAS */
+.card-grid {
+    display: grid; /* Organiza las tarjetas en una cuadrícula */
+    grid-template-columns: repeat(2, 1fr); /* Crea dos columnas iguales */
+    gap: 22px; /* Deja espacio entre las tarjetas */
+}
+
+/* Estilo general de cada tarjeta */
+.card {
+    background: var(--color-tarjeta); /* Color de fondo */
+    border-radius: var(--radio); /* Redondea las esquinas */
+    overflow: hidden; /* Evita que el contenido sobresalga */
+    transition: transform 0.3s; /* Suaviza el movimiento */
+}
+
+/* Efecto al pasar el mouse por una tarjeta */
+.card:hover {
+    transform: translateY(-5px); /* Eleva un poquito la tarjeta */
+}
+
+/* Imagen de cada tarjeta */
+.card__img {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 200px; /* Define la altura */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+/* Hace que una tarjeta ocupe dos filas */
+.card--large {
+    grid-row: span 2;
+}
+
+/* Aumenta la altura de la imagen de la tarjeta grande */
+.card--large .card__img {
+    height: 315px;
+}
+
+/* Espacio interno del contenido de las tarjetas */
+.card__content {
+    padding: 22px;
+}
+
+/* Etiqueta pequeña de cada tarjeta */
+.card__tag {
+    color: var(--color-acento); /* Color de acento */
+    font-size: 11px; /* Tamaño pequeño */
+    font-weight: 700; /* Letra gruesa */
+    letter-spacing: 1px; /* Separa las letras */
+}
+
+/* Título de las tarjetas */
+.card__title {
+    font-size: 20px; /* Tamaño del título */
+    margin: 8px 0; /* Espacio arriba y abajo */
+}
+
+/* Información adicional de las tarjetas */
+.card__meta {
+    color: var(--color-gris); /* Color gris */
+    font-size: 13px; /* Tamaño de letra */
+}
+
+/* CUADRÍCULAS DE LIGAS Y EQUIPOS */
+.league-grid,
+.team-grid {
+    display: grid; /* Organiza los elementos en cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* Ajusta las columnas según el espacio disponible */
+    gap: 16px; /* Separa los elementos */
+}
+
+/* Estilo de cada tarjeta de liga */
+.league {
+    padding: 26px; /* Agrega espacio interno */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Agrega un borde suave */
+    border-radius: var(--radio); /* Redondea las esquinas */
+    transition: 0.3s; /* Suaviza los cambios */
+}
+
+/* Efecto al pasar el mouse por una liga */
+.league:hover {
+    background: var(--color-secundario); /* Cambia el fondo */
+}
+
+/* Número o etiqueta de la liga */
+.league__number {
+    color: var(--color-acento-claro); /* Color de acento */
+    font-size: 12px; /* Tamaño de letra */
+    font-weight: 700; /* Letra en negrita */
+}
+
+/* Título de la liga */
+.league__title {
+    margin-top: 12px; /* Deja espacio arriba */
+}
+
+/* Región a la que pertenece la liga */
+.league__region {
+    color: #bdc8c5; /* Color gris claro */
+    font-size: 13px; /* Tamaño de letra */
+}
+
+/* ESTILO DE LAS TARJETAS DE EQUIPOS */
+.team {
+    padding: 32px 20px; /* Agrega espacio interno */
+    background: var(--color-tarjeta); /* Color de fondo */
+    border-radius: var(--radio); /* Redondea las esquinas */
+    text-align: center; /* Centra el texto */
+    cursor: pointer; /* Muestra la manito al pasar el mouse */
+    transition: 0.3s; /* Suaviza los efectos */
+}
+
+/* Efecto al pasar el mouse por un equipo */
+.team:hover {
+    background: #dce7c8; /* Cambia el fondo a un tono claro */
+    transform: translateY(-4px); /* Mueve la tarjeta hacia arriba */
+}
+
+/* País al que pertenece el equipo */
+.team__country {
+    color: var(--color-gris); /* Color gris */
+    font-size: 13px; /* Tamaño de letra */
+    margin-top: 4px; /* Deja espacio arriba */
+}
+
+/* SECCIÓN DE NOTICIAS */
+.news {
+    width: 100%; /* Ocupa todo el ancho */
+    display: grid; /* Organiza el contenido en cuadrícula */
+    grid-template-columns: 1fr 1fr; /* Divide el espacio en dos columnas */
+    align-items: center; /* Centra el contenido verticalmente */
+    gap: 30px; /* Deja espacio entre columnas */
+    background: var(--color-tarjeta); /* Color de fondo */
+    padding: 22px; /* Agrega espacio interno */
+    border-radius: var(--radio); /* Redondea las esquinas */
+}
+
+/* Imagen de la noticia */
+.news__img {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 260px; /* Define la altura */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 12px; /* Redondea las esquinas */
+}
+
+/* Título de la noticia */
+.news__title {
+    font-size: 26px; /* Tamaño del título */
+    margin: 12px 0; /* Espacio arriba y abajo */
+}
+
+/* Texto descriptivo de la noticia */
+.news__text {
+    color: var(--color-gris); /* Usa un color gris */
+}
+
+/* SECCIÓN DE INICIO DE SESIÓN Y REGISTRO */
+.auth-grid {
+    width: 100%; /* Ocupa todo el ancho */
+    display: grid; /* Organiza los formularios en cuadrícula */
+    grid-template-columns: 1fr 1fr; /* Crea dos columnas iguales */
+    gap: 40px; /* Deja espacio entre ellas */
+}
+
+/* Organización general de los formularios */
+.form {
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Coloca los campos en vertical */
+    gap: 14px; /* Separa los campos */
+    max-width: 430px; /* Limita el ancho del formulario */
+}
+
+/* Estilo de los campos para escribir */
+.form__input {
+    padding: 14px; /* Agrega espacio interno */
+    border: 1px solid #d2cbbb; /* Agrega un borde gris claro */
+    background: var(--color-tarjeta); /* Color de fondo */
+    border-radius: 8px; /* Redondea las esquinas */
+    outline: none; /* Quita el borde que aparece por defecto al seleccionar */
+}
+
+/* Efecto cuando seleccionamos un campo del formulario */
+.form__input:focus {
+    border-color: var(--color-acento); /* Cambia el borde al color de acento */
+}
+
+/* Estilo de los enlaces del formulario */
+.form__link {
+    font-size: 13px; /* Tamaño de letra */
+    text-decoration: underline; /* Subraya el texto */
+}
+
+/* Estilo de los mensajes que aparecen en el formulario */
+.message {
+    margin-top: 10px; /* Deja espacio arriba */
+    font-size: 14px; /* Tamaño de letra */
+    font-weight: 600; /* Hace el texto un poco más grueso */
+}

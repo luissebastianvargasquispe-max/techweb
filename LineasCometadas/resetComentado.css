@@ -1,0 +1,255 @@
+/* COLORES Y VARIABLES GENERALES DE LA PÁGINA */
+
+:root {
+    --color-fondo: #f1eadb; /* Color de fondo general */
+    --color-tarjeta: #fffaf0; /* Color de fondo de las tarjetas */
+    --color-principal: #142b3c; /* Color principal de la página */
+    --color-secundario: #284c50; /* Color secundario */
+    --color-acento: #668b45; /* Color para destacar elementos */
+    --color-acento-claro: #a8c76b; /* Variante más clara del color de acento */
+    --color-texto: #172d3c; /* Color general de los textos */
+    --color-gris: #77786e; /* Color para textos secundarios */
+    --radio: 18px; /* Redondeo general de las esquinas */
+}
+
+/* REINICIA LOS ESTILOS QUE TRAE EL NAVEGADOR POR DEFECTO */
+*,
+*::before,
+*::after {
+    margin: 0; /* Quita los márgenes */
+    padding: 0; /* Quita los espacios internos */
+    box-sizing: border-box; /* Hace que el tamaño incluya el relleno y el borde */
+}
+
+/* CONFIGURACIÓN GENERAL DEL DOCUMENTO HTML */
+html {
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea suave */
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    max-width: 100%; /* Evita que supere el ancho de la pantalla */
+}
+
+/* ESTILOS GENERALES DEL CUERPO DE LA PÁGINA */
+body {
+    background: var(--color-fondo); /* Coloca el color de fondo */
+    color: var(--color-texto); /* Define el color del texto */
+    font-family: system-ui, -apple-system, Arial, sans-serif; /* Define el tipo de letra */
+    line-height: 1.6; /* Separa un poco las líneas del texto */
+    overflow-x: hidden; /* Evita que aparezca desplazamiento horizontal */
+    max-width: 100%; /* Limita el ancho de la página */
+}
+
+/* QUITA EL SUBRAYADO DE LOS ENLACES */
+a {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del elemento padre */
+}
+
+/* AJUSTES GENERALES PARA LAS IMÁGENES */
+img {
+    display: block; /* Evita espacios extra debajo de las imágenes */
+    max-width: 100%; /* Evita que las imágenes se salgan de su contenedor */
+}
+
+/* ADAPTACIÓN PARA TABLETS (769px A 1024px) */
+@media (max-width: 1024px) {
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr); /* Coloca el contenido en una sola columna */
+        gap: 28px; /* Deja espacio entre los elementos */
+        padding: 36px 6%; /* Ajusta los espacios internos */
+    }
+
+    .hero__media {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        height: 300px; /* Reduce la altura de la imagen */
+        order: -1; /* Coloca la imagen antes del texto */
+    }
+
+    .auth-grid {
+        grid-template-columns: minmax(0, 1fr); /* Coloca los formularios en una sola columna */
+        gap: 32px; /* Separa los formularios */
+    }
+
+    .footer__top {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Organiza el footer en dos columnas */
+        gap: 32px; /* Deja espacio entre las columnas */
+    }
+}
+
+/* ADAPTACIÓN PARA CELULARES (768px O MENOS) */
+@media (max-width: 768px) {
+
+    .header__toggle {
+        display: flex; /* Muestra el botón para abrir el menú */
+    }
+
+    /* CONFIGURACIÓN DEL MENÚ PARA CELULARES */
+    .header__nav {
+        position: fixed; /* Mantiene el menú fijo en la pantalla */
+        top: 0; /* Lo coloca arriba */
+        left: 0; /* Lo coloca a la izquierda */
+        width: 100vw; /* Ocupa todo el ancho de la pantalla */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        background: var(--color-principal); /* Fondo del menú */
+        color: #fff; /* Texto blanco */
+        flex-direction: column; /* Coloca los enlaces en vertical */
+        justify-content: center; /* Centra los elementos verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+        gap: 22px; /* Deja espacio entre los enlaces */
+        padding: 32px; /* Agrega espacio interno */
+        opacity: 0; /* Hace que el menú esté invisible */
+        visibility: hidden; /* Oculta el menú inicialmente */
+        pointer-events: none; /* Evita tocar elementos mientras está cerrado */
+        transform: translateY(-12px); /* Mueve un poquito el menú hacia arriba */
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease; /* Suaviza la aparición del menú */
+        z-index: 1001; /* Hace que aparezca por encima de otros elementos */
+    }
+
+    /* MUESTRA EL MENÚ CUANDO SE ABRE */
+    .header__nav--open {
+        opacity: 1; /* Hace visible el menú */
+        visibility: visible; /* Permite verlo */
+        pointer-events: auto; /* Permite interactuar con los enlaces */
+        transform: translateY(0); /* Lo devuelve a su posición normal */
+    }
+
+    /* Estilo de los enlaces dentro del menú móvil */
+    .header__nav .header__link {
+        color: #fff; /* Pone los enlaces en blanco */
+        font-size: 20px; /* Aumenta el tamaño de letra */
+    }
+
+    /* Estilo del botón principal del menú móvil */
+    .header__nav .header__link--cta {
+        background: var(--color-acento); /* Cambia el fondo del botón */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 250px; /* Limita su ancho máximo */
+        text-align: center; /* Centra el texto */
+        padding: 14px; /* Agrega espacio interno */
+    }
+
+    /* Reduce los espacios de las secciones */
+    .section {
+        padding: 44px 5%;
+    }
+
+    /* Ajustes de la portada para celulares */
+    .hero {
+        grid-template-columns: minmax(0, 1fr); /* Coloca todo en una columna */
+        padding: 20px 5% 40px; /* Ajusta los espacios internos */
+        gap: 20px; /* Separa los elementos */
+    }
+
+    .hero__media {
+        width: 100%; /* Ocupa todo el ancho */
+        height: 215px; /* Reduce la altura de la imagen */
+        order: -1; /* Muestra primero la imagen */
+    }
+
+    /* Ajusta el título principal para pantallas pequeñas */
+    .hero__title {
+        font-size: 36px; /* Reduce el tamaño del título */
+        line-height: 1.05; /* Ajusta la separación entre líneas */
+        letter-spacing: -1.5px; /* Junta un poco las letras */
+    }
+
+    .hero__text {
+        max-width: 100%; /* Permite que el texto ocupe todo el ancho */
+    }
+
+    /* Hace que los botones ocupen todo el ancho */
+    .button {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        text-align: center; /* Centra el texto */
+        padding: 15px 18px; /* Ajusta el espacio interno */
+    }
+
+    /* CARRUSEL HORIZONTAL PARA LAS TARJETAS EN CELULARES */
+    .card-grid,
+    .league-grid,
+    .team-grid {
+        display: flex; /* Coloca las tarjetas en fila */
+        flex-direction: row; /* Mantiene los elementos horizontalmente */
+        overflow-x: auto; /* Permite deslizar hacia los lados */
+        scroll-snap-type: x mandatory; /* Hace que las tarjetas encajen al deslizar */
+        gap: 16px; /* Deja espacio entre las tarjetas */
+        padding-bottom: 10px; /* Agrega espacio debajo */
+        scrollbar-width: none; /* Oculta la barra de desplazamiento */
+    }
+
+    /* Oculta la barra de desplazamiento en navegadores WebKit */
+    .card-grid::-webkit-scrollbar,
+    .league-grid::-webkit-scrollbar,
+    .team-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Ajusta el tamaño de las tarjetas de noticias */
+    .card,
+    .card--large {
+        flex: 0 0 85%; /* Cada tarjeta ocupa el 85% del ancho */
+        min-width: 0; /* Permite que se ajuste al espacio disponible */
+        scroll-snap-align: start; /* Hace que encaje al inicio al deslizar */
+    }
+
+    /* Ajusta la altura de las imágenes de las tarjetas */
+    .card--large .card__img,
+    .card__img {
+        height: 185px;
+    }
+
+    /* Ajusta el tamaño de las tarjetas de ligas y equipos */
+    .league,
+    .team {
+        flex: 0 0 70%; /* Cada tarjeta ocupa el 70% del ancho */
+        min-width: 0; /* Evita que se desborde */
+        scroll-snap-align: start; /* Hace que encaje al deslizar */
+    }
+
+    /* Coloca noticias y formularios en una sola columna */
+    .news,
+    .auth-grid {
+        grid-template-columns: minmax(0, 1fr); /* Deja una sola columna */
+        gap: 32px; /* Separa los elementos */
+    }
+
+    /* Reduce la altura de las imágenes de noticias */
+    .news__img {
+        height: 200px;
+    }
+
+    /* Hace que el formulario ocupe todo el ancho */
+    .form {
+        width: 100%; /* Ocupa todo el ancho */
+        max-width: 100%; /* Quita el límite de ancho */
+    }
+
+    /* Ajusta los campos del formulario */
+    .form__input {
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 15px; /* Agrega espacio interno */
+        font-size: 16px; /* Facilita la lectura en celulares */
+    }
+
+    /* Ajusta los espacios del pie de página */
+    .footer {
+        padding: 40px 5% 28px;
+    }
+
+    /* Coloca las secciones del footer en una sola columna */
+    .footer__top {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px; /* Deja espacio entre las secciones */
+    }
+
+    /* Organiza el logo y su información en vertical */
+    .footer__brand {
+        flex-direction: column;
+        gap: 14px; /* Separa los elementos */
+    }
+
+    /* Permite que el texto del footer ocupe todo el ancho */
+    .footer__text {
+        max-width: 100%;
+    }
+}

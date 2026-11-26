@@ -1,0 +1,289 @@
+/* Estilo general de la barra de navegación */
+
+.header {
+    position: fixed; /* Mantiene el menú fijo aunque bajemos la página */
+    top: 0; /* Lo coloca arriba */
+    left: 0; /* Lo pega al lado izquierdo */
+    z-index: 1000; /* Hace que aparezca por encima de otros elementos */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 68px; /* Define la altura del menú */
+    background: var(--color-principal); /* Usa el color principal */
+    color: #fff; /* Pone el texto en blanco */
+    padding: 0 5%; /* Agrega espacio a los lados */
+    display: flex; /* Organiza los elementos en fila */
+    justify-content: space-between; /* Separa el logo y el menú */
+    align-items: center; /* Centra los elementos verticalmente */
+    border-bottom: 2px solid var(--color-secundario); /* Agrega un borde inferior */
+    box-shadow: 0 6px 20px rgba(11, 27, 40, 0.22); /* Agrega una sombra suave */
+}
+
+/* Estilo del texto del logo */
+.header__logo {
+    font-size: 21px; /* Tamaño de la letra */
+    font-weight: 900; /* Hace la letra más gruesa */
+    letter-spacing: -0.5px; /* Ajusta el espacio entre letras */
+    color: #fff; /* Pone el logo en blanco */
+    white-space: nowrap; /* Evita que el logo se divida en varias líneas */
+}
+
+/* Cambia el color de una parte del logo */
+.header__logo-accent {
+    color: var(--color-acento-claro);
+}
+
+/* ESTILOS PARA ESCRITORIO (MÁS DE 768px) */
+
+/* Organiza los enlaces del menú */
+.header__nav {
+    display: flex; /* Coloca los enlaces en fila */
+    align-items: center; /* Los centra verticalmente */
+    gap: 16px; /* Deja espacio entre los elementos */
+}
+
+/* Oculta estos elementos en la versión de escritorio */
+.header__drawer-top,
+.header__account-card,
+.header__drawer-footer,
+.header__item-icon,
+.header__chevron,
+.header__toggle {
+    display: none;
+}
+
+/* Organiza los grupos de enlaces */
+.header__group {
+    display: flex; /* Coloca los enlaces en fila */
+    align-items: center; /* Los alinea verticalmente */
+    gap: 14px; /* Deja espacio entre ellos */
+}
+
+/* Estilo general de cada enlace */
+.header__item {
+    display: inline-flex; /* Permite organizar el contenido del enlace */
+    align-items: center; /* Centra el contenido */
+    font-size: 13px; /* Tamaño de letra */
+    font-weight: 700; /* Letra en negrita */
+    color: #e6ecee; /* Color gris claro */
+    white-space: nowrap; /* Evita que el texto salte de línea */
+    transition: color 0.2s ease, background 0.2s ease; /* Suaviza los cambios */
+}
+
+/* Cambia el color del enlace al pasar el mouse */
+.header__item:hover {
+    color: var(--color-acento-claro);
+}
+
+/* Estilo especial para el botón principal */
+.header__item--cta {
+    background: var(--color-acento-claro); /* Le da un fondo de color */
+    color: var(--color-principal); /* Cambia el color del texto */
+    padding: 8px 14px; /* Agrega espacio interno */
+    border-radius: 8px; /* Redondea las esquinas */
+    font-weight: 800; /* Hace el texto más grueso */
+}
+
+/* Efecto al pasar el mouse por el botón principal */
+.header__item--cta:hover {
+    background: #fff; /* Cambia el fondo a blanco */
+    color: var(--color-principal); /* Mantiene el texto oscuro */
+}
+
+/* ESTILOS PARA MÓVILES (768px O MENOS) */
+@media (max-width: 768px) {
+
+    .header {
+        height: 64px; /* Reduce un poco la altura del menú */
+        padding: 0 18px; /* Ajusta el espacio de los lados */
+    }
+
+    /* Estilo del botón para abrir el menú */
+    .header__toggle {
+        display: flex; /* Muestra el botón */
+        flex-direction: column; /* Coloca las líneas una debajo de otra */
+        justify-content: center; /* Centra las líneas verticalmente */
+        align-items: center; /* Centra las líneas horizontalmente */
+        gap: 5px; /* Separa las líneas */
+        width: 42px; /* Ancho del botón */
+        height: 42px; /* Alto del botón */
+        background: var(--color-secundario); /* Color de fondo */
+        border: 1px solid rgba(168, 199, 107, 0.35); /* Agrega un borde suave */
+        border-radius: 10px; /* Redondea las esquinas */
+        cursor: pointer; /* Muestra la manito al pasar el mouse */
+    }
+
+    /* Estilo de cada línea del botón de menú */
+    .header__toggle-bar {
+        display: block; /* Hace visible cada línea */
+        width: 22px; /* Ancho de la línea */
+        height: 2.5px; /* Grosor de la línea */
+        background: #fff; /* Color blanco */
+        border-radius: 2px; /* Redondea las puntas */
+    }
+
+    /* Menú lateral que ocupa toda la pantalla */
+    .header__nav {
+        display: none; /* Oculta el menú inicialmente */
+        position: fixed; /* Lo mantiene fijo en la pantalla */
+        inset: 0; /* Ocupa toda la pantalla */
+        z-index: 1100; /* Lo coloca por encima del encabezado */
+        width: 100%; /* Ocupa todo el ancho */
+        height: 100vh; /* Ocupa toda la altura visible */
+        overflow-y: auto; /* Permite desplazarse si hay mucho contenido */
+        background: #0d1b26; /* Fondo azul oscuro */
+        color: #fff; /* Texto blanco */
+        flex-direction: column; /* Coloca los enlaces en vertical */
+        justify-content: flex-start; /* Empieza desde arriba */
+        align-items: stretch; /* Hace que los elementos ocupen el ancho disponible */
+        gap: 14px; /* Deja espacio entre secciones */
+        padding: 16px 18px 28px; /* Agrega espacio interno */
+    }
+
+    /* Muestra el menú cuando tiene la clase open */
+    .header__nav--open {
+        display: flex;
+    }
+
+    /* Parte superior del menú móvil */
+    .header__drawer-top {
+        display: flex; /* Muestra sus elementos en fila */
+        justify-content: space-between; /* Separa el título y el botón cerrar */
+        align-items: center; /* Los centra verticalmente */
+    }
+
+    /* Estilo del pequeño título del menú */
+    .header__drawer-badge {
+        font-size: 13px; /* Tamaño de letra */
+        font-weight: 900; /* Letra gruesa */
+        letter-spacing: 1px; /* Separa las letras */
+        color: var(--color-acento-claro); /* Usa el color de acento */
+    }
+
+    /* Estilo del botón para cerrar el menú */
+    .header__close {
+        width: 38px; /* Ancho del botón */
+        height: 38px; /* Alto del botón */
+        border-radius: 10px; /* Redondea las esquinas */
+        border: 1px solid rgba(255, 255, 255, 0.16); /* Agrega un borde suave */
+        background: rgba(255, 255, 255, 0.06); /* Fondo ligeramente transparente */
+        color: #fff; /* Icono o texto blanco */
+        font-size: 18px; /* Tamaño del símbolo */
+        cursor: pointer; /* Muestra la manito al pasar el mouse */
+    }
+
+    /* Tarjeta con la información de la cuenta */
+    .header__account-card {
+        display: flex; /* Organiza los elementos en fila */
+        align-items: center; /* Los centra verticalmente */
+        gap: 12px; /* Deja espacio entre ellos */
+        background: #1a2b3a; /* Fondo de la tarjeta */
+        border: 1px solid rgba(168, 199, 107, 0.25); /* Agrega un borde suave */
+        border-radius: 14px; /* Redondea las esquinas */
+        padding: 14px; /* Agrega espacio interno */
+    }
+
+    /* Estilo de la imagen o inicial del usuario */
+    .header__account-avatar {
+        width: 44px; /* Ancho del avatar */
+        height: 44px; /* Alto del avatar */
+        border-radius: 12px; /* Redondea las esquinas */
+        background: var(--color-acento); /* Color de fondo */
+        color: #fff; /* Texto blanco */
+        font-weight: 900; /* Letra gruesa */
+        display: grid; /* Usa una cuadrícula */
+        place-items: center; /* Centra el contenido */
+        flex-shrink: 0; /* Evita que el avatar se encoja */
+    }
+
+    /* Organiza los datos del usuario en vertical */
+    .header__account-info {
+        display: flex; /* Activa flexbox */
+        flex-direction: column; /* Coloca los textos uno debajo de otro */
+        min-width: 0; /* Permite que el contenido se ajuste */
+        flex: 1; /* Ocupa el espacio disponible */
+    }
+
+    /* Estilo de la etiqueta de la cuenta */
+    .header__account-label {
+        font-size: 11px; /* Letra pequeña */
+        color: #a9b7c2; /* Color gris */
+    }
+
+    /* Estilo del nombre del usuario */
+    .header__account-name {
+        font-size: 14px; /* Tamaño de letra */
+        color: #fff; /* Texto blanco */
+        white-space: nowrap; /* Evita que el nombre salte de línea */
+        overflow: hidden; /* Oculta el texto que sobra */
+        text-overflow: ellipsis; /* Muestra tres puntos si el nombre es muy largo */
+    }
+
+    /* Organiza los enlaces del menú en vertical */
+    .header__group {
+        flex-direction: column; /* Coloca los enlaces uno debajo de otro */
+        align-items: stretch; /* Hace que ocupen todo el ancho */
+        gap: 0; /* Quita la separación entre enlaces */
+        background: #1a2b3a; /* Fondo del grupo */
+        border: 1px solid rgba(255, 255, 255, 0.08); /* Borde suave */
+        border-radius: 14px; /* Redondea las esquinas */
+        overflow: hidden; /* Evita que el contenido sobresalga */
+    }
+
+    /* Estilo de los enlaces en móviles */
+    .header__item {
+        padding: 15px 16px; /* Agrega espacio interno */
+        font-size: 15px; /* Aumenta el tamaño de letra */
+        white-space: normal; /* Permite que el texto ocupe varias líneas */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07); /* Separa los enlaces */
+    }
+
+    /* Quita el borde del último enlace */
+    .header__item:last-child {
+        border-bottom: none;
+    }
+
+    /* Ajusta el botón principal para el menú móvil */
+    .header__item--cta {
+        background: transparent; /* Quita el fondo de color */
+        color: #fff; /* Deja el texto blanco */
+        padding: 15px 16px; /* Mantiene el espacio interno */
+        border-radius: 0; /* Quita las esquinas redondeadas */
+        font-weight: 700; /* Mantiene la letra gruesa */
+    }
+
+    /* Efecto al tocar o pasar por los enlaces */
+    .header__item:hover {
+        background: var(--color-secundario); /* Cambia el fondo */
+        color: #fff; /* Mantiene el texto blanco */
+    }
+
+    /* Estilo de los iconos que acompañan a los enlaces */
+    .header__item-icon {
+        display: inline-flex; /* Muestra el icono junto al texto */
+        width: 22px; /* Define el ancho del icono */
+        justify-content: center; /* Centra el icono */
+        margin-right: 10px; /* Deja espacio antes del texto */
+        color: var(--color-acento-claro); /* Usa el color de acento */
+    }
+
+    /* Permite que el texto ocupe el espacio disponible */
+    .header__item-text {
+        flex: 1;
+    }
+
+    /* Estilo de la flechita de cada enlace */
+    .header__chevron {
+        display: inline; /* Muestra la flecha */
+        color: #96a5b1; /* Color gris */
+        font-size: 18px; /* Tamaño de la flecha */
+    }
+
+    /* Parte inferior del menú móvil */
+    .header__drawer-footer {
+        margin-top: auto; /* Empuja esta sección hacia abajo */
+        padding-top: 12px; /* Agrega espacio arriba */
+        display: flex; /* Coloca los elementos en fila */
+        justify-content: space-between; /* Separa los elementos */
+        font-size: 12px; /* Tamaño de letra pequeño */
+        color: #9aa8b4; /* Color gris claro */
+    }
+}

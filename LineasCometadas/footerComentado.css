@@ -1,0 +1,162 @@
+
+/* Estilo general del pie de página */
+.footer {
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    background: #142230; /* Le da un fondo azul oscuro */
+    color: #fff; /* Pone el texto en blanco */
+    padding: 60px 7% 35px; /* Agrega espacio interno */
+    border-top: 4px dashed var(--color-fondo); /* Agrega un borde superior punteado */
+}
+
+/* Organiza la parte superior del footer en columnas */
+.footer__top {
+    display: grid; /* Usa una cuadrícula para organizar el contenido */
+    grid-template-columns: 1.8fr 1fr 1.2fr 1fr; /* Define el tamaño de cada columna */
+    gap: 35px; /* Deja espacio entre las columnas */
+    padding-bottom: 40px; /* Separa el contenido de la parte inferior */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14); /* Agrega una línea divisoria */
+}
+
+/* Organiza el logo y su información */
+.footer__brand {
+    display: flex; /* Coloca los elementos uno al lado del otro */
+    align-items: flex-start; /* Alinea los elementos desde arriba */
+    gap: 18px; /* Deja espacio entre ellos */
+}
+
+/* Evita que el logo se encoja */
+.footer__emblem {
+    flex-shrink: 0;
+    transition: transform 0.3s; /* Hace más suave la animación */
+}
+
+/* Gira un poco el logo cuando pasamos el mouse */
+.footer__brand:hover .footer__emblem {
+    transform: rotate(15deg);
+}
+
+/* Da estilo al nombre o título del logo */
+.footer__logo {
+    font-size: 24px; /* Tamaño de la letra */
+    font-weight: 900; /* Hace que la letra sea más gruesa */
+    letter-spacing: 0.5px; /* Separa un poquito las letras */
+}
+
+/* Cambia el color de una parte del logo */
+.footer__logo-accent {
+    color: var(--color-acento-claro);
+}
+
+/* Estilo del texto descriptivo */
+.footer__text {
+    color: #cdd5dc; /* Color gris claro */
+    font-size: 13px; /* Tamaño pequeño de letra */
+    max-width: 270px; /* Limita el ancho del texto */
+    margin: 10px 0 14px; /* Agrega espacio alrededor */
+}
+
+/* Organiza la ubicación */
+.footer__location {
+    display: flex; /* Coloca el icono y el texto juntos */
+    align-items: center; /* Los alinea verticalmente */
+    gap: 6px; /* Deja espacio entre ambos */
+    color: var(--color-acento-claro); /* Usa el color de acento */
+    font-size: 12px; /* Tamaño de letra pequeño */
+    font-weight: 600; /* Hace el texto un poco más grueso */
+}
+
+/* Estilo de los títulos de cada sección */
+.footer__heading {
+    color: var(--color-acento-claro); /* Color del título */
+    font-size: 11px; /* Tamaño de letra */
+    font-weight: 700; /* Letra en negrita */
+    letter-spacing: 1.5px; /* Separa las letras */
+    margin-bottom: 16px; /* Deja espacio debajo del título */
+}
+
+/* Organiza la lista de enlaces */
+.footer__list {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Coloca los elementos en vertical */
+    gap: 10px; /* Deja espacio entre cada elemento */
+}
+
+/* Estilo de los enlaces y textos */
+.footer__link,
+.footer__item {
+    color: #dce2e8; /* Color gris claro */
+    font-size: 13px; /* Tamaño de letra */
+    transition: color 0.3s; /* Suaviza el cambio de color */
+}
+
+/* Cambia el color del enlace al pasar el mouse */
+.footer__link:hover {
+    color: var(--color-acento-claro);
+}
+
+/* Organiza los botones de redes sociales */
+.footer__socials {
+    display: flex; /* Coloca los botones en fila */
+    gap: 10px; /* Deja espacio entre ellos */
+    margin-bottom: 12px; /* Agrega espacio debajo */
+}
+
+/* Da forma y estilo a cada botón social */
+.footer__social-btn {
+    width: 36px; /* Ancho del botón */
+    height: 36px; /* Alto del botón */
+    border-radius: 50%; /* Lo hace circular */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Agrega un borde suave */
+    display: grid; /* Usa una cuadrícula */
+    place-items: center; /* Centra el icono */
+    color: #dce2e8; /* Color del icono */
+    transition: 0.3s; /* Suaviza las animaciones */
+}
+
+/* Efecto al pasar el mouse por los botones sociales */
+.footer__social-btn:hover {
+    border-color: var(--color-acento-claro); /* Cambia el color del borde */
+    color: var(--color-acento-claro); /* Cambia el color del icono */
+    transform: translateY(-2px); /* Mueve el botón un poquito hacia arriba */
+}
+
+/* Estilo del nombre de usuario de las redes */
+.footer__handle {
+    color: #cdd5dc; /* Color gris claro */
+    font-size: 12px; /* Tamaño pequeño */
+}
+
+/* Estilo de la parte inferior del footer */
+.footer__bottom {
+    padding-top: 24px; /* Deja espacio en la parte superior */
+}
+
+/* Estilo del texto de derechos de autor */
+.footer__copy {
+    font-size: 12px; /* Tamaño de letra */
+    font-weight: 700; /* Letra en negrita */
+    color: #eef2f5; /* Color casi blanco */
+}
+
+/* ADAPTA EL FOOTER A PANTALLAS PEQUEÑAS */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px 28px; /* Reduce los espacios para móviles */
+    }
+
+    .footer__top {
+        grid-template-columns: 1fr; /* Coloca todo en una sola columna */
+        gap: 28px; /* Deja espacio entre las secciones */
+    }
+
+    .footer__brand {
+        flex-direction: column; /* Coloca el logo y el texto en vertical */
+        align-items: flex-start; /* Los alinea hacia la izquierda */
+        gap: 12px; /* Separa los elementos */
+    }
+
+    .footer__text {
+        max-width: 100%; /* Permite que el texto ocupe todo el ancho */
+    }
+}
