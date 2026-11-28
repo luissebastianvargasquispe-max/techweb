@@ -1,0 +1,436 @@
+<!DOCTYPE html> // Declara el tipo de documento como HTML5
+<html lang="es"> // Inicia el documento HTML e indica que el idioma es español
+<head> // Inicia la cabecera con metadatos y recursos del documento
+    <meta charset="UTF-8"> // Define la codificación de caracteres UTF-8
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> // Ajusta la escala y ancho para diseño adaptable (responsive)
+    <title>MINUTO 90 PRO | Fútbol</title> // Establece el título en la pestaña del navegador
+    <link rel="stylesheet" href="css/index.css"> // Vincula la hoja de estilos externa
+</head> // Cierra la cabecera del documento
+<body> // Inicia el cuerpo visible de la página
+
+<header class="header"> // Inicia el encabezado principal del sitio
+    <a href="#inicio" class="header__logo">MINUTO <span class="header__logo-accent">90</span></a> // Logo con enlace a #inicio y acento en "90"
+
+    <button type="button" class="header__toggle" id="menuBtn" aria-label="Abrir menú" aria-expanded="false"> // Botón hamburguesa para abrir el menú móvil
+        <span class="header__toggle-bar"></span> // Primera línea del ícono hamburguesa
+        <span class="header__toggle-bar"></span> // Segunda línea del ícono hamburguesa
+        <span class="header__toggle-bar"></span> // Tercera línea del ícono hamburguesa
+    </button> // Cierra el botón hamburguesa
+
+    <nav class="header__nav" id="headerNav" aria-label="Menú principal"> // Contenedor de navegación principal y menú lateral (drawer)
+        // Barra superior dentro del menú móvil (logo + botón cerrar X)
+        <div class="header__drawer-top"> // Contenedor superior del drawer móvil
+            <span class="header__drawer-badge">MINUTO 90 PRO</span> // Etiqueta con el nombre de la plataforma
+            <button type="button" class="header__close" id="menuClose" aria-label="Cerrar menú">✕</button> // Botón para cerrar el menú móvil
+        </div> // Cierra la barra superior del drawer
+
+        // Tarjeta superior de cuenta / sesión activa
+        <a href="#login" class="header__account-card" id="drawerCuenta"> // Enlace de tarjeta hacia el formulario de acceso
+            <span class="header__account-avatar">90</span> // Avatar circular con el número 90
+            <span class="header__account-info"> // Contenedor de textos del estado de cuenta
+                <span class="header__account-label" id="drawerEstado">Sesión no iniciada</span> // Texto dinámico del estado de sesión
+                <strong class="header__account-name" id="drawerUsuario">Ingresar o crear cuenta</strong> // Texto dinámico con el usuario o acción
+            </span> // Cierra el contenedor de información de cuenta
+            <span class="header__chevron">›</span> // Flecha indicadora a la derecha
+        </a> // Cierra la tarjeta de cuenta
+
+        // Grupo 1: Secciones principales en tarjetas tipo lista
+        <div class="header__group"> // Agrupa los enlaces principales de navegación
+            <a href="#inicio" class="header__item"> // Enlace a la sección Inicio
+                <span class="header__item-icon">⌂</span> // Ícono de inicio
+                <span class="header__item-text">Inicio</span> // Texto del enlace Inicio
+                <span class="header__chevron">›</span> // Flecha indicadora
+            </a> // Cierra enlace Inicio
+            <a href="#partidos" class="header__item"> // Enlace a la sección Partidos destacados
+                <span class="header__item-icon">⚽</span> // Ícono de balón
+                <span class="header__item-text">Partidos destacados</span> // Texto del enlace Partidos destacados
+                <span class="header__chevron">›</span> // Flecha indicadora
+            </a> // Cierra enlace Partidos destacados
+            <a href="#ligas" class="header__item"> // Enlace a la sección Ligas y torneos
+                <span class="header__item-icon">🏆</span> // Ícono de trofeo
+                <span class="header__item-text">Ligas y torneos</span> // Texto del enlace Ligas y torneos
+                <span class="header__chevron">›</span> // Flecha indicadora
+            </a> // Cierra enlace Ligas y torneos
+            <a href="#equipos" class="header__item"> // Enlace a la sección Grandes equipos
+                <span class="header__item-icon">🛡</span> // Ícono de escudo
+                <span class="header__item-text">Grandes equipos</span> // Texto del enlace Grandes equipos
+                <span class="header__chevron">›</span> // Flecha indicadora
+            </a> // Cierra enlace Grandes equipos
+        </div> // Cierra el Grupo 1
+
+        // Grupo 2: Actualidad y favoritos
+        <div class="header__group"> // Agrupa enlaces de noticias, favoritos y acceso
+            <a href="#noticias" class="header__item"> // Enlace a la sección Noticias del momento
+                <span class="header__item-icon">📰</span> // Ícono de noticias
+                <span class="header__item-text">Noticias del momento</span> // Texto del enlace Noticias
+                <span class="header__chevron">›</span> // Flecha indicadora
+            </a> // Cierra enlace Noticias
+            <a href="#favoritos" class="header__item"> // Enlace a la sección Tu equipo favorito
+                <span class="header__item-icon">★</span> // Ícono de estrella
+                <span class="header__item-text" id="drawerFavorito">Tu equipo favorito</span> // Texto dinámico del equipo favorito
+                <span class="header__chevron">›</span> // Flecha indicadora
+            </a> // Cierra enlace Favoritos
+            <a href="#login" class="header__item header__item--cta"> // Enlace destacado hacia la sección de login
+                <span class="header__item-icon">👤</span> // Ícono de usuario
+                <span class="header__item-text" id="navUsuario">Ingresar</span> // Texto dinámico de acceso o saludo
+                <span class="header__chevron">›</span> // Flecha indicadora
+            </a> // Cierra enlace Ingresar
+        </div> // Cierra el Grupo 2
+
+        // Pie del menú
+        <div class="header__drawer-footer"> // Contenedor inferior del menú móvil
+            <span class="header__meta">🌐 Español</span> // Muestra el idioma del sitio
+            <span class="header__meta">📍 La Paz, Bolivia</span> // Muestra la ubicación
+        </div> // Cierra el pie del menú
+    </nav> // Cierra la barra de navegación
+</header> // Cierra el encabezado principal
+
+<main class="main"> // Inicia el contenido principal de la página
+
+    <section class="hero" id="inicio"> // Sección principal de bienvenida (Hero)
+        <div class="hero__content"> // Contenedor del texto principal del hero
+            <span class="hero__tag">TU PASIÓN, NUESTRA CANCHA</span> // Etiqueta superior de bienvenida
+            <h1 class="hero__title">EL FÚTBOL<br>NO SE DETIENE.</h1> // Título principal H1 con salto de línea
+            <p class="hero__text">Descubre los mejores partidos, equipos y noticias del fútbol mundial en tiempo real.</p> // Descripción introductoria
+            <a href="#partidos" class="button">EXPLORAR AHORA ↗</a> // Botón de llamada a la acción hacia #partidos
+        </div> // Cierra el contenedor de texto del hero
+        <div class="hero__media"> // Contenedor visual de imagen del hero
+            <img class="hero__img" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=80" alt="Estadio de fútbol"> // Imagen principal de estadio
+            <span class="hero__badge">● EN VIVO · 90 MINUTOS</span> // Etiqueta superpuesta indicando transmisión en vivo
+        </div> // Cierra el contenedor visual del hero
+    </section> // Cierra la sección hero
+
+    <section class="section" id="partidos"> // Sección 01: Partidos destacados
+        <div class="section__heading"> // Encabezado de la sección
+            <span class="section__tag">01 / COMPETICIÓN</span> // Subtítulo numerado de sección
+            <h2 class="section__title">PARTIDOS DESTACADOS</h2> // Título H2 de la sección
+        </div> // Cierra el encabezado de sección
+
+        <div class="card-grid"> // Cuadrícula de tarjetas de partidos
+            <article class="card card--large"> // Tarjeta destacada de mayor tamaño
+                <img class="card__img" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=80" alt="Estadio Bernabéu"> // Imagen del partido
+                <div class="card__content"> // Contenedor de detalles del partido
+                    <span class="card__tag">LA LIGA · EL CLÁSICO</span> // Etiqueta de competición
+                    <h3 class="card__title">Real Madrid vs Barcelona</h3> // Equipos enfrentados
+                    <p class="card__meta">Domingo · 16:00 HRS</p> // Día y hora del encuentro
+                </div> // Cierra los detalles del partido
+            </article> // Cierra la tarjeta grande
+
+            <article class="card"> // Segunda tarjeta de partido
+                <img class="card__img" src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80" alt="Premier League"> // Imagen del partido
+                <div class="card__content"> // Contenedor de detalles del partido
+                    <span class="card__tag">PREMIER LEAGUE</span> // Etiqueta de competición
+                    <h3 class="card__title">Arsenal vs Liverpool</h3> // Equipos enfrentados
+                    <p class="card__meta">Sábado · 14:30 HRS</p> // Día y hora del encuentro
+                </div> // Cierra los detalles del partido
+            </article> // Cierra la segunda tarjeta
+
+            <article class="card"> // Tercera tarjeta de partido
+                <img class="card__img" src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=800&q=80" alt="Champions League"> // Imagen del partido
+                <div class="card__content"> // Contenedor de detalles del partido
+                    <span class="card__tag">CHAMPIONS LEAGUE</span> // Etiqueta de competición
+                    <h3 class="card__title">PSG vs Bayern Múnich</h3> // Equipos enfrentados
+                    <p class="card__meta">Miércoles · 20:00 HRS</p> // Día y hora del encuentro
+                </div> // Cierra los detalles del partido
+            </article> // Cierra la tercera tarjeta
+        </div> // Cierra la cuadrícula de tarjetas
+    </section> // Cierra la sección de partidos
+
+    <section class="section section--dark" id="ligas"> // Sección 02: Ligas y torneos con fondo oscuro
+        <div class="section__heading"> // Encabezado de la sección
+            <span class="section__tag">02 / TORNEOS</span> // Subtítulo numerado
+            <h2 class="section__title">EL MUNDO DEL FÚTBOL</h2> // Título H2 de la sección
+        </div> // Cierra el encabezado
+
+        <div class="league-grid"> // Cuadrícula de ligas
+            <article class="league"> // Tarjeta de liga 01
+                <span class="league__number">01</span> // Número identificador
+                <h3 class="league__title">Champions League</h3> // Nombre de la competición
+                <p class="league__region">Europa</p> // Región geográfica
+            </article> // Cierra tarjeta de liga 01
+            <article class="league"> // Tarjeta de liga 02
+                <span class="league__number">02</span> // Número identificador
+                <h3 class="league__title">Premier League</h3> // Nombre de la competición
+                <p class="league__region">Inglaterra</p> // País
+            </article> // Cierra tarjeta de liga 02
+            <article class="league"> // Tarjeta de liga 03
+                <span class="league__number">03</span> // Número identificador
+                <h3 class="league__title">La Liga</h3> // Nombre de la competición
+                <p class="league__region">España</p> // País
+            </article> // Cierra tarjeta de liga 03
+            <article class="league"> // Tarjeta de liga 04
+                <span class="league__number">04</span> // Número identificador
+                <h3 class="league__title">Serie A</h3> // Nombre de la competición
+                <p class="league__region">Italia</p> // País
+            </article> // Cierra tarjeta de liga 04
+        </div> // Cierra la cuadrícula de ligas
+    </section> // Cierra la sección de ligas
+
+    <section class="section" id="equipos"> // Sección 03: Selección de equipos favoritos
+        <div class="section__heading"> // Encabezado de la sección
+            <span class="section__tag">03 / CLUBES (HAZ CLIC PARA ELEGIR FAVORITO)</span> // Instrucción para el usuario
+            <h2 class="section__title">GRANDES EQUIPOS</h2> // Título H2 de la sección
+        </div> // Cierra el encabezado
+
+        <div class="team-grid"> // Cuadrícula de clubes
+            <article class="team" onclick="guardarFavorito('Real Madrid')"> // Tarjeta que guarda Real Madrid al hacer clic
+                <h3 class="team__name">REAL MADRID</h3> // Nombre del club
+                <p class="team__country">España · ☆ Elegir</p> // País y texto de acción
+            </article> // Cierra tarjeta Real Madrid
+            <article class="team" onclick="guardarFavorito('FC Barcelona')"> // Tarjeta que guarda FC Barcelona al hacer clic
+                <h3 class="team__name">FC BARCELONA</h3> // Nombre del club
+                <p class="team__country">España · ☆ Elegir</p> // País y texto de acción
+            </article> // Cierra tarjeta FC Barcelona
+            <article class="team" onclick="guardarFavorito('Manchester City')"> // Tarjeta que guarda Manchester City al hacer clic
+                <h3 class="team__name">MANCHESTER CITY</h3> // Nombre del club
+                <p class="team__country">Inglaterra · ☆ Elegir</p> // País y texto de acción
+            </article> // Cierra tarjeta Manchester City
+            <article class="team" onclick="guardarFavorito('Bayern Múnich')"> // Tarjeta que guarda Bayern Múnich al hacer clic
+                <h3 class="team__name">BAYERN MÚNICH</h3> // Nombre del club
+                <p class="team__country">Alemania · ☆ Elegir</p> // País y texto de acción
+            </article> // Cierra tarjeta Bayern Múnich
+        </div> // Cierra la cuadrícula de clubes
+    </section> // Cierra la sección de equipos
+
+    <section class="section section--news" id="noticias"> // Sección 04: Noticias del momento
+        <div class="section__heading"> // Encabezado de la sección
+            <span class="section__tag">04 / ACTUALIDAD</span> // Subtítulo numerado
+            <h2 class="section__title">NOTICIAS DEL MOMENTO</h2> // Título H2 de la sección
+        </div> // Cierra el encabezado
+
+        <article class="news"> // Artículo principal de noticia
+            <img class="news__img" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80" alt="Estadio deportivo"> // Imagen de la noticia
+            <div class="news__content"> // Contenedor del texto de la noticia
+                <span class="card__tag">FÚTBOL INTERNACIONAL</span> // Categoría de la noticia
+                <h3 class="news__title">Todo lo que sucede dentro y fuera de la cancha.</h3> // Titular de la noticia
+                <p class="news__text">Información, fichajes, novedades tácticas y análisis profundo de tus competiciones favoritas.</p> // Resumen de la noticia
+            </div> // Cierra el contenido de la noticia
+        </article> // Cierra el artículo de noticia
+    </section> // Cierra la sección de noticias
+
+    <section class="section section--dark" id="favoritos"> // Sección 05: Muestra el equipo favorito elegido
+        <div class="section__heading"> // Encabezado de la sección
+            <span class="section__tag">05 / PERSONALIZA</span> // Subtítulo numerado
+            <h2 class="section__title">TU EQUIPO FAVORITO</h2> // Título H2 de la sección
+        </div> // Cierra el encabezado
+        <p id="mensaje" class="message">Aún no has seleccionado un equipo. Haz clic en cualquier club arriba.</p> // Mensaje dinámico actualizado desde JS
+    </section> // Cierra la sección de favoritos
+
+    <section class="section" id="login"> // Sección 06 y 07: Inicio de sesión y registro
+        <div class="auth-grid"> // Contenedor de dos columnas para formularios
+            <div> // Columna izquierda: formulario de inicio de sesión
+                <div class="section__heading"> // Encabezado de inicio de sesión
+                    <span class="section__tag">06 / ACCESO</span> // Subtítulo numerado
+                    <h2 class="section__title">INICIAR SESIÓN</h2> // Título H2
+                </div> // Cierra encabezado
+                <form class="form" onsubmit="iniciarSesion(event)"> // Formulario que ejecuta iniciarSesion() al enviarse
+                    <input class="form__input" id="correo" type="email" placeholder="Correo electrónico" required> // Campo obligatorio de correo
+                    <input class="form__input" id="clave" type="password" placeholder="Contraseña" required> // Campo obligatorio de contraseña
+                    <button class="button" type="submit">INICIAR SESIÓN ↗</button> // Botón de envío del formulario
+                    <p id="resultadoLogin" class="message"></p> // Párrafo para mostrar mensajes de validación
+                    <a class="form__link" href="#recuperar">¿Olvidaste tu contraseña?</a> // Enlace hacia recuperación de contraseña
+                </form> // Cierra formulario de inicio de sesión
+            </div> // Cierra columna izquierda
+
+            <div id="registro"> // Columna derecha: formulario de registro
+                <div class="section__heading"> // Encabezado de registro
+                    <span class="section__tag">07 / NUEVO HINCHA</span> // Subtítulo numerado
+                    <h2 class="section__title">CREAR CUENTA</h2> // Título H2
+                </div> // Cierra encabezado
+                <form class="form" onsubmit="registrar(event)"> // Formulario que ejecuta registrar() al enviarse
+                    <input class="form__input" id="nombre" type="text" placeholder="Nombre completo" required> // Campo obligatorio de nombre
+                    <input class="form__input" id="nuevoCorreo" type="email" placeholder="Correo electrónico" required> // Campo obligatorio de correo nuevo
+                    <input class="form__input" id="nuevaClave" type="password" placeholder="Contraseña" required> // Campo obligatorio de contraseña nueva
+                    <button class="button button--accent" type="submit">REGISTRARME ↗</button> // Botón de envío de registro
+                    <p id="resultadoRegistro" class="message"></p> // Párrafo para mostrar resultado del registro
+                </form> // Cierra formulario de registro
+            </div> // Cierra columna derecha
+        </div> // Cierra el contenedor de formularios
+    </section> // Cierra la sección de autenticación
+
+    <section class="section section--dark" id="recuperar"> // Sección 08: Recuperación de contraseña
+        <div class="section__heading"> // Encabezado de recuperación
+            <span class="section__tag">08 / SOPORTE</span> // Subtítulo numerado
+            <h2 class="section__title">RECUPERAR ACCESO</h2> // Título H2
+        </div> // Cierra encabezado
+        <form class="form" onsubmit="recuperar(event)"> // Formulario que ejecuta recuperar() al enviarse
+            <input class="form__input" id="correoRecuperar" type="email" placeholder="Correo registrado" required> // Campo obligatorio de correo registrado
+            <button class="button button--accent" type="submit">ENVIAR ENLACE</button> // Botón para enviar solicitud
+            <p id="resultadoRecuperar" class="message"></p> // Párrafo para mostrar confirmación
+        </form> // Cierra formulario de recuperación
+    </section> // Cierra sección de recuperación
+
+</main> // Cierra el contenido principal
+
+<footer class="footer"> // Inicia el pie de página del sitio
+    <div class="footer__top"> // Contenedor superior del footer en columnas
+        // Columna 1: Marca e Icono Deportivo
+        <div class="footer__brand"> // Bloque de identidad de marca
+            <div class="footer__emblem" aria-hidden="true"> // Contenedor del ícono SVG decorativo
+                <svg viewBox="0 0 64 64" width="68" height="68" fill="none"> // Lienzo vectorial SVG de 64x64
+                    <circle cx="32" cy="32" r="28" fill="#fffaf0" stroke="#142b3c" stroke-width="3"/> // Círculo base del balón
+                    <polygon points="32,16 42,23 38,35 26,35 22,23" fill="#142b3c"/> // Pentágono central del balón
+                    <path d="M32 4V16M42 23L55 19M38 35L47 48M26 35L17 48M22 23L9 19" stroke="#142b3c" stroke-width="2.5"/> // Costuras radiales del balón
+                    <circle cx="32" cy="32" r="28" stroke="#a8c76b" stroke-width="2.5"/> // Contorno exterior decorativo verde
+                </svg> // Cierra el gráfico SVG
+            </div> // Cierra el contenedor del emblema
+            <div class="footer__info"> // Contenedor de información de marca
+                <h2 class="footer__logo">MINUTO <span class="footer__logo-accent">90 PRO</span></h2> // Nombre de marca en el footer
+                <p class="footer__text">Para quienes viven cada jugada, cada gol y la pasión de los 90 minutos.</p> // Eslogan descriptivo
+                <p class="footer__location"> // Párrafo de ubicación geográfica
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> // Ícono SVG de pin de ubicación
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/> // Trazado del pin de mapa
+                    </svg> // Cierra ícono SVG
+                    La Paz, Bolivia // Texto de ciudad y país
+                </p> // Cierra párrafo de ubicación
+            </div> // Cierra información de marca
+        </div> // Cierra Columna 1
+
+        // Columna 2: Explora
+        <div class="footer__col"> // Columna de enlaces de navegación
+            <h3 class="footer__heading">EXPLORA</h3> // Título de columna
+            <ul class="footer__list"> // Lista desordenada de enlaces
+                <li><a href="#inicio" class="footer__link">Inicio</a></li> // Enlace a Inicio
+                <li><a href="#partidos" class="footer__link">Partidos</a></li> // Enlace a Partidos
+                <li><a href="#ligas" class="footer__link">Ligas</a></li> // Enlace a Ligas
+                <li><a href="#equipos" class="footer__link">Equipos</a></li> // Enlace a Equipos
+            </ul> // Cierra lista de enlaces
+        </div> // Cierra Columna 2
+
+        // Columna 3: Hablemos
+        <div class="footer__col"> // Columna de información de contacto
+            <h3 class="footer__heading">HABLEMOS</h3> // Título de columna
+            <ul class="footer__list"> // Lista de datos de contacto
+                <li class="footer__item">contacto@minuto90pro.com</li> // Correo de contacto
+                <li class="footer__item">WhatsApp · +591 7012 3456</li> // Número de WhatsApp
+                <li class="footer__item">Cobertura en vivo · 24/7</li> // Horario de cobertura
+            </ul> // Cierra lista de contacto
+        </div> // Cierra Columna 3
+
+        // Columna 4: Redes Sociales
+        <div class="footer__col"> // Columna de redes sociales
+            <h3 class="footer__heading">SIGUE LA CANCHA</h3> // Título de columna
+            <div class="footer__socials"> // Contenedor de botones sociales
+                <a href="#" class="footer__social-btn" aria-label="Instagram"> // Botón enlace a Instagram
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> // Ícono SVG de Instagram
+                        <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/> // Formas geométricas de cámara Instagram
+                    </svg> // Cierra ícono Instagram
+                </a> // Cierra botón Instagram
+                <a href="#" class="footer__social-btn" aria-label="Facebook"> // Botón enlace a Facebook
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> // Ícono SVG de Facebook
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/> // Trazado de la letra F de Facebook
+                    </svg> // Cierra ícono Facebook
+                </a> // Cierra botón Facebook
+            </div> // Cierra contenedor de botones sociales
+            <p class="footer__handle">@minuto90.pro</p> // Nombre de usuario en redes
+        </div> // Cierra Columna 4
+    </div> // Cierra parte superior del footer
+
+    <div class="footer__bottom"> // Franja inferior de derechos reservados
+        <p class="footer__copy">© 2026 MINUTO 90 PRO. Todos los derechos reservados.</p> // Texto de copyright
+    </div> // Cierra franja inferior
+</footer> // Cierra el pie de página
+
+<script> // Inicia el bloque de código JavaScript
+    // SINCRONIZAR DATOS DE SESIÓN Y FAVORITO EN PÁGINA Y MENÚ DRAWER
+    function sincronizarEstado() { // Define la función que actualiza la interfaz según localStorage
+        const fav = localStorage.getItem("favorito"); // Lee el equipo favorito guardado en localStorage
+        if (fav) { // Verifica si existe un equipo favorito guardado
+            document.getElementById("mensaje").textContent = "★ Tu equipo favorito actual es: " + fav; // Muestra el favorito en la sección #favoritos
+            document.getElementById("drawerFavorito").textContent = "Favorito: " + fav; // Muestra el favorito en el menú lateral
+        } // Cierra condición if (fav)
+
+        const sesion = JSON.parse(localStorage.getItem("sesion")); // Obtiene y parsea los datos de la sesión activa
+        if (sesion) { // Verifica si hay un usuario con sesión iniciada
+            const primerNombre = sesion.nombre.split(" ")[0]; // Extrae el primer nombre del usuario
+            document.getElementById("navUsuario").textContent = "Hola, " + primerNombre; // Saluda al usuario en el enlace de navegación
+            document.getElementById("drawerEstado").textContent = "Sesión iniciada como"; // Cambia la etiqueta de estado en el drawer
+            document.getElementById("drawerUsuario").textContent = sesion.correo || sesion.nombre; // Muestra el correo o nombre en la tarjeta de cuenta
+        } // Cierra condición if (sesion)
+    } // Cierra la función sincronizarEstado
+
+    window.addEventListener("DOMContentLoaded", sincronizarEstado); // Ejecuta sincronizarEstado cuando el HTML termina de cargarse
+
+    function registrar(e) { // Define la función para registrar un nuevo usuario
+        e.preventDefault(); // Evita que el formulario recargue la página al enviarse
+        const usuario = { // Crea un objeto con los datos ingresados en el formulario
+            nombre: document.getElementById("nombre").value, // Captura el nombre completo
+            correo: document.getElementById("nuevoCorreo").value, // Captura el correo electrónico
+            clave: document.getElementById("nuevaClave").value // Captura la contraseña
+        }; // Cierra el objeto usuario
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // Carga usuarios existentes o crea un arreglo vacío
+        if (usuarios.some(u => u.correo === usuario.correo)) { // Comprueba si el correo ya fue registrado antes
+            document.getElementById("resultadoRegistro").textContent = "Este correo ya está registrado."; // Muestra aviso de correo duplicado
+            return; // Detiene la ejecución de la función
+        } // Cierra validación de correo duplicado
+        usuarios.push(usuario); // Agrega el nuevo usuario al arreglo
+        localStorage.setItem("usuarios", JSON.stringify(usuarios)); // Guarda la lista actualizada en localStorage
+        document.getElementById("resultadoRegistro").textContent = "✔ Registro exitoso. Ya puedes iniciar sesión."; // Muestra confirmación de registro
+        e.target.reset(); // Limpia todos los campos del formulario
+    } // Cierra la función registrar
+
+    function iniciarSesion(e) { // Define la función para validar e iniciar sesión
+        e.preventDefault(); // Evita la recarga de página al enviar el formulario
+        const correo = document.getElementById("correo").value; // Obtiene el correo ingresado
+        const clave = document.getElementById("clave").value; // Obtiene la contraseña ingresada
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // Recupera la lista de usuarios registrados
+        const usuario = usuarios.find(u => u.correo === correo && u.clave === clave); // Busca un usuario que coincida con correo y clave
+
+        if (usuario) { // Si las credenciales son correctas
+            localStorage.setItem("sesion", JSON.stringify(usuario)); // Guarda la sesión activa en localStorage
+            document.getElementById("resultadoLogin").textContent = "✔ Bienvenido, " + usuario.nombre; // Muestra mensaje de bienvenida
+            sincronizarEstado(); // Actualiza los datos visibles en la página y el menú
+        } else { // Si las credenciales no coinciden
+            document.getElementById("resultadoLogin").textContent = "✖ Datos incorrectos."; // Muestra mensaje de error
+        } // Cierra estructura if-else
+    } // Cierra la función iniciarSesion
+
+    function guardarFavorito(equipo) { // Define la función que guarda el club favorito seleccionado
+        localStorage.setItem("favorito", equipo); // Almacena el nombre del equipo en localStorage
+        sincronizarEstado(); // Actualiza el texto en la página y en el menú
+        document.getElementById("favoritos").scrollIntoView({ behavior: "smooth" }); // Desplaza suavemente la pantalla hacia #favoritos
+    } // Cierra la función guardarFavorito
+
+    function recuperar(e) { // Define la función simulada para recuperar acceso
+        e.preventDefault(); // Evita que el formulario recargue la página
+        document.getElementById("resultadoRecuperar").textContent = "✔ Solicitud recibida. Revisa tu bandeja (simulación)."; // Muestra mensaje de confirmación
+        e.target.reset(); // Limpia el campo del formulario
+    } // Cierra la función recuperar
+
+    // MENÚ MÓVIL TIPO DRAWER
+    const menuBtn = document.getElementById("menuBtn"); // Obtiene referencia al botón hamburguesa
+    const menuClose = document.getElementById("menuClose"); // Obtiene referencia al botón de cerrar (X)
+    const headerNav = document.getElementById("headerNav"); // Obtiene referencia al contenedor de navegación
+
+    function abrirMenu(estado) { // Define la función para abrir o cerrar el menú móvil
+        headerNav.classList.toggle("header__nav--open", estado); // Agrega o quita la clase que muestra el drawer
+        menuBtn.classList.toggle("header__toggle--active", estado); // Cambia el estado visual del botón hamburguesa
+        menuBtn.setAttribute("aria-expanded", estado); // Actualiza el atributo de accesibilidad aria-expanded
+        document.body.style.overflow = estado ? "hidden" : ""; // Bloquea el scroll de fondo cuando el menú está abierto
+    } // Cierra la función abrirMenu
+
+    menuBtn.addEventListener("click", () => abrirMenu(!headerNav.classList.contains("header__nav--open"))); // Alterna el menú al hacer clic en el botón hamburguesa
+    menuClose.addEventListener("click", () => abrirMenu(false)); // Cierra el menú al hacer clic en el botón X
+
+    headerNav.querySelectorAll("a").forEach(link => { // Recorre todos los enlaces dentro del menú de navegación
+        link.addEventListener("click", () => abrirMenu(false)); // Cierra el menú móvil automáticamente al seleccionar un enlace
+    }); // Cierra el recorrido de enlaces
+
+    // RESPALDO AUTOMÁTICO DE IMÁGENES
+    document.querySelectorAll("img").forEach(img => { // Recorre todas las etiquetas <img> del documento
+        img.addEventListener("error", () => { // Escucha si alguna imagen falla al cargar
+            const imgCargada = Array.from(document.querySelectorAll("img")) // Convierte la lista de imágenes en un arreglo
+                .find(otra => otra !== img && otra.complete && otra.naturalWidth > 0); // Busca otra imagen que sí haya cargado bien
+
+            if (imgCargada) { // Si encuentra una imagen válida de respaldo
+                img.src = imgCargada.src; // Reemplaza la ruta rota por la de la imagen cargada
+            } else { // Si ninguna imagen cargó correctamente
+                img.style.background = "linear-gradient(135deg, #142b3c, #284c50)"; // Aplica un fondo degradado de respaldo
+                img.alt = "MINUTO 90 PRO"; // Define un texto alternativo por defecto
+            } // Cierra estructura if-else
+        }); // Cierra el evento error de la imagen
+    }); // Cierra el recorrido de imágenes
+</script> // Cierra el bloque de JavaScript
+
+</body> // Cierra el cuerpo del documento
+</html> // Cierra el documento HTML
